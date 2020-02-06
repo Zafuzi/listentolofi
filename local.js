@@ -14,6 +14,11 @@ let channels = [
         url: "https://www.youtube.com/embed/pH3xU1YcjaA",
         type: "live"
     }, 
+    {
+        name: "lofi hip hop radio - beats to study/relax to"
+        url: "https://www.youtube.com/embed/bebuiaSKtU4",
+        type: "live"
+    }, 
 ]
 let r;
 (() => {
