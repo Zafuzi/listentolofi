@@ -16,19 +16,23 @@
             height: 100vh;
             overflow: hidden;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+			background: #000;
         }
+		body {
+			display: flex;
+			flex-flow: column;
+		}
         iframe {
+			display: flex;
             width: 100vw;
-            height: calc(100vh - 64px);
-            position: absolute;
-            bottom: 0;
+			height: 100%;
         }
         h1 {
             color: #fff;
             font-size: 24px;
         }
         header {
-            background: #333366;
+            background: #393C46;
             box-shadow: 0px -4px 10px rgba(0,0,0,.1);
             display: flex;
             justify-content: space-between;
@@ -36,13 +40,28 @@
             flex-flow: row wrap;
             height: 64px;
             padding-left: 10px;
-            position: absolute;
-            top: 0;
             width: 100vw;
         }
         header img {
             margin-right: 15px;
         }
+
+		button {
+			border: none;
+			padding: 4px 12px;
+			background: rgba(255, 255, 255, .8);
+			background: #FEDC9A;
+			margin: 15px;
+		}
+		#channel_buttons {
+			width: 100%;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		#frame_container {
+			display: flex;
+			height: 100%;
+		}
     </style>
 </head>
 <body>
@@ -50,11 +69,20 @@
         <div style="display:flex; align-items: center; justify-content: center;">
             <img src="icon.png">
             <h1>Listen to Lofi</h1>
+
         </div>
-        <a style="padding-right: 25px; color: #FF5AE5; text-decoration: none;" href="https://zfoutz.com" target="_blank">Made by Zach Foutz</a>
     </header>
-    <iframe width="1280" height="720" src="https://www.youtube.com/embed/hHW1oY26kxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	<div id="channel_buttons">
+		<button id="channel">__name__</button>
+	</div>
+
+	<div id="frame_container">
+    <iframe id="frame" width="1280" height="720" src="__url__?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
 
     <script async defer type="text/javascript" src="https://plausible.io/js/plausible.js"></script>
+	<script src="rplc8.js"></script>
+	<script src="local.js"></script>
 </body>
 </html>
